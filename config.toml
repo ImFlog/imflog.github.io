@@ -29,6 +29,7 @@ navbar_items = [
         { url = "$BASE_URL/posts", name = "Posts" },
     ]},
 ]
+mermaid.enabled = true
 
 [extra.author]
 name = "Florian Garcia"
@@ -36,6 +37,7 @@ avatar = "/images/avatar.png"
 
 [extra.social]
 email = "garcia.florian.perso@gmail.com"
+twitter = "im_flog"
 github = "imFlog"
 linkedin = "garciaflorian"
 mastodon_username = "ImFlog"
