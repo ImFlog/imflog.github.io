@@ -5,6 +5,9 @@ date=2023-04-28
 [taxonomies]
 categories = ["Tips"]
 tags = ["ARM", "MAC", "Windows", "UTM", "VM"]
+
+[extra]
+comments = true
 +++
 
 While working on some obscure Windows and .NET things involving the requirement to run on Windows,

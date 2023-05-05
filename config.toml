@@ -42,3 +42,9 @@ github = "imFlog"
 linkedin = "garciaflorian"
 mastodon_username = "ImFlog"
 mastodon_server = "fosstodon.org"
+
+[extra.analytics]
+google = "G-TL7CRVVX4Y"
+
+[extra.commenting]
+disqus = "https-imflog-github-io"
