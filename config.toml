@@ -9,7 +9,7 @@ compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
-# Them chose
+# Theme chosen
 theme = "DeepThought"
 
 taxonomies = [
@@ -42,9 +42,6 @@ github = "imFlog"
 linkedin = "garciaflorian"
 mastodon_username = "ImFlog"
 mastodon_server = "fosstodon.org"
-
-[extra.analytics]
-google = "G-TL7CRVVX4Y"
 
 [extra.commenting]
 disqus = "https-imflog-github-io"
