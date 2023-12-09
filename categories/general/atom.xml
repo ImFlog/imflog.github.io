@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>My personal blog - General</title>
+    <link href="https://imflog.github.io/categories/general/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-08-04T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/general/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Building a blog</title>
+        <published>2023-08-04T00:00:00+00:00</published>
+        <updated>2023-08-04T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/posts/starting-a-blog/" type="text/html"/>
+        <id>https://imflog.github.io/posts/starting-a-blog/</id>
+        
+        <content type="html">&lt;p&gt;As tradition requires it, this post will do a tour of how this blog is built but also about the rationale behind the blog itself.
+As a blog owner I cheated because this is in fact not my first post but who cares ?&lt;&#x2F;p&gt;
+&lt;p&gt;So without further ado, let&#x27;s get started !&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;why&quot;&gt;Why ?&lt;&#x2F;h1&gt;
+&lt;p&gt;The reason is pretty simple, I always liked to share knowledge with others.
+Mostly via conferences and some articles posted on my previous companies blogs.&lt;&#x2F;p&gt;
+&lt;p&gt;But multiple factors made me reduce this activity:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I changed job and I don&#x27;t have the same amount of time to dedicate to this&lt;&#x2F;li&gt;
+&lt;li&gt;I also became a dad thus I have less time out of work to prepare for such events&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;So If I have less time, and I still want to share knowledge, what can I do ?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I am not very active on social media (twitter and mastodon), I am more there to look for knowledge. 
+Also, I am not very comfortable with the threads format, and I don&#x27;t want to be limited by the number of characters.&lt;&#x2F;li&gt;
+&lt;li&gt;I don&#x27;t have the competency nor the time to work on video contents. I used to stream on Twitch, and may come back to this in the future,
+but It&#x27;s too time-consuming for me. &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;So it leaves me with writing blog posts. Even though a lot is already available on the internet, 
+I feel that writing contents for myself can help my future self and maybe others ?
+After 10 years in the IT industry working in multiple domains (consulting, gambling, health startup),
+I want to share tips, I want to share my experience, I want to share my knowledge and this on multiple subjects: technical and organizational ones.&lt;&#x2F;p&gt;
+&lt;p&gt;My current company don&#x27;t really have a company blog (for now) and I want to keep something for me.
+My previous blog posts are still available, but It is a bit sad that I somehow never really had ownership on those.
+So let&#x27;s change that, and build my own blog ! I already have a lot of content In my mind that I want to share.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;how&quot;&gt;How ?&lt;&#x2F;h1&gt;
+&lt;p&gt;I wanted to build something simple, something that I can easily maintain and host.
+That&#x27;s why I decided to use a static site generator.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;static-site-generator&quot;&gt;Static site generator&lt;&#x2F;h2&gt;
+&lt;p&gt;A static site generator is a tool that takes a bunch of files and generate a static website out of them.
+So nothing too complex on my side, I can just write content and don&#x27;t have to bother about what&#x27;s around it.
+I preferably wanted to use a static site generator that uses markdown files, I use markdown a lot in my daily life, and I am very comfortable with it.
+Like this our blog is a stateless website that serve HTML files, like in the good old days.&lt;&#x2F;p&gt;
+&lt;p&gt;No JS ! No CSS ! No HTML ! No Database ! Just markdown files !&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;zola&quot;&gt;Zola&lt;&#x2F;h3&gt;
+&lt;p&gt;Zola is a static site generator, it&#x27;s comparable with Hugo, Jekyll, Pelican, etc...
+It&#x27;s based on &lt;a href=&quot;https:&#x2F;&#x2F;commonmark.org&#x2F;&quot;&gt;CommonMark&lt;&#x2F;a&gt; a specification for Markdown.&lt;&#x2F;p&gt;
+&lt;p&gt;One of the main reason I chose to use Zola instead of the competition is that it&#x27;s an OSS project written in Rust, with an active community.
+I am a Rust enthusiast, I&#x27;ve used the language in the past (not during my day jobs) and I really like it.
+Having my site generator written in Rust will allow me to contribute to it if I need to.&lt;&#x2F;p&gt;
+&lt;p&gt;To use Zola you only need a static binary, no need to install a runtime like NodeJS or Ruby.
+Also, I am not good in all the design things (👋CSS), and Zola has a lot of themes available for free.&lt;&#x2F;p&gt;
+&lt;p&gt;This was enough to convince me.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;hosting&quot;&gt;Hosting&lt;&#x2F;h2&gt;
+&lt;p&gt;One of the first thing that I thought was that I am not sure how much time I will be able to dedicate to this blog.
+My family is my priority and I also maintain an open source project that takes some time. I plan to feed this blog when the occasions arise.
+For now, I don&#x27;t want to invest money if I am not active enough here, So finding something free was one of the criteria.&lt;&#x2F;p&gt;
+&lt;h3 id=&quot;github-pages&quot;&gt;Github pages&lt;&#x2F;h3&gt;
+&lt;p&gt;I chose to use &lt;a href=&quot;https:&#x2F;&#x2F;pages.github.com&#x2F;&quot;&gt;GitHub pages&lt;&#x2F;a&gt; to host this blog.
+It is a free hosting solution for static websites, it&#x27;s very simple to use and has a lot of features.&lt;&#x2F;p&gt;
+&lt;p&gt;Why did I choose GitHub pages ?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I am already familiar with GitHub and it&#x27;s ecosystem. That&#x27;s where my OSS projects are versioned.&lt;&#x2F;li&gt;
+&lt;li&gt;I also used GitHub actions in the past, and I am very comfortable with them.&lt;&#x2F;li&gt;
+&lt;li&gt;It&#x27;s free&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h1&gt;
+&lt;p&gt;Now you know almost everything behind the technical choices I made.
+Piping Zola and GitHub pages together is very simple and documented in Zola.
+You can check the source code of this blog &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;Imflog.github.io&quot;&gt;here&lt;&#x2F;a&gt; 
+and the CI&#x2F;CD pipeline &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;imflog.github.io&#x2F;blob&#x2F;main&#x2F;.github&#x2F;workflows&#x2F;build.yml&quot;&gt;here&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you will enjoy reading my future posts, and don&#x27;t hesitate to comment on them !&lt;&#x2F;p&gt;
+&lt;p&gt;Flo.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

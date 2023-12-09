@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://imflog.github.io/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+My personal blog | Managing tooling version with ASDF
+
+  </title>
+
+  
+  
+  
+
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;imflog.github.io">My personal blog</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;posts">
+            Posts
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            Managing tooling version with ASDF
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Florian Garcia published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2023-12-09">December 09, 2023</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>3 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>540 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/categories/tips/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Tips</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/categories/tooling/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Tooling</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/tags/asdf/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>ASDF</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <h1 id="the-local-tooling-problem">The local tooling problem</h1>
+<p>I always had issues with managing the versions of the tools I use on my computer.
+Working on multiple projects, open and private sources implies that some tools are not all stuck on the same version.
+So I often end up needing to support multiple versions of the same tool on my computer.
+For example, I usually need to support multiple versions of languages : Go, Python, Java, NodeJS to name a few,
+but also tools like Terraform, Ansible, MySQL, Postgres ...</p>
+<p>So I started to use different tools to handler this:</p>
+<ul>
+<li><a href="https://github.com/moovweb/gvm">GVM</a> for Go</li>
+<li><a href="https://github.com/pyenv/pyenv">Pyenv</a> for Python</li>
+<li><a href="https://sdkman.io/">SDKMAN</a> for Java</li>
+<li><a href="https://github.com/nvm-sh/nvm">NVM</a> for NodeJS</li>
+<li><a href="https://github.com/tfutils/tfenv">Tfenv</a> for Terraform</li>
+<li>...</li>
+</ul>
+<p>And everything worked fine, but everytime I had to use a new language or tool (recently done some Rust for instance), 
+I had to find yet another tool. And I had to remember to update them from time to time.</p>
+<h1 id="introducing-asdf">Introducing ASDF</h1>
+<p>That when I found <a href="https://asdf-vm.com/">ASDF</a>: &quot;The Multiple Runtime Version Manager&quot;.
+As the name implies it's a tool to allow you to manage multiple versions of your runtimes with one tool.</p>
+<p>So I gave it a go, and I was not disappointed. After installing it using <code>brew install asdf</code>, 
+I was able to install the plugins that I needed, they are all listed in <a href="https://github.com/asdf-vm/asdf-plugins">specific GitHub repository</a>.
+You can run a single command to install a plugin and then you can install specific runtime version pretty easily:</p>
+<pre data-lang="bash" style="background-color:#2b303b;color:#c0c5ce;" class="language-bash "><code class="language-bash" data-lang="bash"><span style="color:#bf616a;">asdf</span><span> plugin add golang
+</span><span style="color:#bf616a;">asdf</span><span> golang install 1.21.1
+</span></code></pre>
+<p>And boom I have a new version of Go installed on my computer.</p>
+<h2 id="using-asdf-in-your-projects">Using ASDF in your projects</h2>
+<p>After you have access to a new version of a runtime, you need to be able to use it in your projects.
+With tools like nvm, you could define a specific <code>.nvmrc</code> file in your project to specify the version of NodeJS to use.
+ASDF has a similar feature, you can create a <code>.tool-versions</code> file in your project and specify the version of the runtime to use:
+<code>asdf local golang 1.21.1</code> for instance will be responsible to populate the <code>.tool-versions</code> file with the correct version of Go.
+No more need to create multiple file named differently for each tool as everything is centralized in one file.</p>
+<h2 id="easy-migration">Easy migration</h2>
+<p>Adopting a new tool can be challenging in a team, but ASDF makes it easy.
+Indeed, most of the plugins support the non asdf version of the version definition.
+For instance for Go, you can use the <code>go.mod</code> file to specify the version of Go to use and ASDF will use it to install the correct version.
+<code>.nvmrc</code> is also supported for NodeJS for instance and so on.</p>
+<p>That means that you can start using ASDF in your project without forcing your team to install it 🤩</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>ASDF is now one of the first thing I install on a new computer, it's so easy to switch tool version that I can't live without it anymore.
+I encourage you to give it a go, and if you have any question, feel free to ask them in the comments.</p>
+<p>Flo.</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;posts&#x2F;starting-a-blog&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Building a blog
+            </a>
+          </div>
+           
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div id="disqus_thread"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  
+  <script src="https://imflog.github.io/elasticlunr.min.js"></script>
+  <script src="https://imflog.github.io/search_index.en.js"></script><script src="https://imflog.github.io/js/site.js"></script>
+
+  
+
+
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://imflog.github.io";
+    this.page.identifier = "/posts/asdf/";
+  };
+
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-imflog-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+  
+  
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta content="#ffffff" name="theme-color" />
+  <meta content="#da532c" name="msapplication-TileColor" />
+
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1.9.1/css/academicons.min.css" integrity="sha384-FIue+PI4SsI9XfHCz8dBLg33b0c1fMJgNU3X//L26FYbGnlSEfWmNT7zgWc2N9b6" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css" integrity="sha256-AbA177XfpSnFEvgpYu1jMygiLabzPCJCRIBtR5jGc0k=" crossorigin="anonymous">
+  <link href="https://imflog.github.io/deep-thought.css" rel="stylesheet" />
+  
+  
+
+  <title>
+    
+My personal blog | NX tips
+
+  </title>
+
+  
+  
+  
+
+  
+</head>
+
+<body class="has-background-white">
+  <nav aria-label="section navigation" class="navbar is-light" role="navigation">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item is-size-5 has-text-weight-bold" href="https:&#x2F;&#x2F;imflog.github.io">My personal blog</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger burger" data-target="navMenu" role="button">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div class="navbar-menu" id="navMenu">
+        <div class="navbar-end has-text-centered">
+          
+          
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;">
+            Home
+          </a>
+          
+          <a class="navbar-item has-text-weight-semibold" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;posts">
+            Posts
+          </a>
+          
+          
+          
+          <a class="navbar-item" id="nav-search" title="Search" data-target="#search-modal">
+            <span class="icon">
+              <i class="fas fa-search"></i>
+            </span>
+          </a>
+          <a class="navbar-item" id="dark-mode" title="Switch to dark theme">
+            <span class="icon">
+              <i class="fas fa-adjust"></i>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  
+
+  
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-8 is-offset-2">
+        <article class="box">
+          <h1 class="title">
+            NX tips
+          </h1>
+          <p class="subtitle"></p>
+          <div class="columns is-multiline is-gapless">
+            <div class="column is-8">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="fas fa-user"></i>
+  </span>
+  <span>Florian Garcia published on</span>
+  <span class="icon">
+    <i class="far fa-calendar-alt"></i>
+  </span>
+  <span><time datetime="2023-05-29">May 29, 2023</time></span>
+</span>
+
+            </div>
+            <div class="column is-4 has-text-right-desktop">
+              
+<span class="icon-text has-text-grey">
+  <span class="icon">
+    <i class="far fa-clock"></i>
+  </span>
+  <span>4 min,</span>
+  <span class="icon">
+    <i class="fas fa-pencil-alt"></i>
+  </span>
+  <span>628 words</span>
+</span>
+
+            </div>
+            <div class="column">
+              
+              
+<p>
+  Categories:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/categories/tips/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-cube"></i>
+      </span>
+      <span>Tips</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+            <div class="column has-text-right-desktop">
+              
+              
+<p>
+  Tags:
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/tags/nx/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>NX</span>
+    </span>
+  </a>
+  
+  <a class="has-text-info-dark has-text-weight-semibold" href="https://imflog.github.io/tags/monorepo/">
+    <span class="icon-text">
+      <span class="icon">
+        <i class="fas fa-tag"></i>
+      </span>
+      <span>Monorepo</span>
+    </span>
+  </a>
+  
+</p>
+
+              
+            </div>
+          </div>
+          <div class="content mt-2">
+            <h1 id="context">Context</h1>
+<p>I recently started working on trying to improve the development experience on the frontend part of my company.
+The goal was to be able to:</p>
+<ul>
+<li>reduce the dependency management issues that we were having</li>
+<li>co-localize the code to reduce friction between teams</li>
+<li>reduce build time by using caches</li>
+<li>share a common set of practice (linting, testing ...) with ease.</li>
+</ul>
+<p>Basically we wanted to use a <a href="https://monorepo.tools/">monorepo</a>.</p>
+<p>So I compared multiple tools:</p>
+<ul>
+<li><a href="https://turbo.build/">Turborepo</a></li>
+<li><a href="https://nx.dev/">NX</a></li>
+<li><a href="https://lerna.js.org/">Lerna</a></li>
+<li><a href="https://rushjs.io/">Rush</a></li>
+</ul>
+<p>I won't go much into details about the differences between those tools, it's not the purpose of this article, but we ended up choosing NX.
+In the next part I will list some tips about how to use NX, and will probably update this article with new tips as I discover them.</p>
+<h1 id="nx-tricks">NX tricks</h1>
+<p>NX as a pretty solid documentation, but sometimes I feel like it's missing some examples, that's why I am writing this article, for my future self.</p>
+<h2 id="running-root-level-commands">Running root level commands</h2>
+<p>To run root level command, you can modify your <code>package.json</code> to add a script like this one:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>  &quot;</span><span style="color:#a3be8c;">scripts</span><span>&quot;: {
+</span><span>    &quot;</span><span style="color:#a3be8c;">format</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">nx run-many --target=lint --all --parallel</span><span>&quot;
+</span><span>  }
+</span><span>}
+</span></code></pre>
+<p>This will allow you to run <code>npm run format</code> and it will run the <code>lint</code> target on all the projects in parallel.
+But what bothered me was that It forces developers to switch tool to run project level commands while the <code>nx</code> CLI would be used everywhere else.
+So I wanted to be able to run <code>nx format</code> instead of <code>npm run format</code>.
+To do so you can update your <code>package.json</code> with the following:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>   &quot;</span><span style="color:#a3be8c;">nx</span><span>&quot;: {},
+</span><span>   &quot;</span><span style="color:#a3be8c;">scripts</span><span>&quot;: {
+</span><span>      &quot;</span><span style="color:#a3be8c;">format</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">nx run-many --target=lint --all --parallel</span><span>&quot;
+</span><span>   }
+</span><span>}
+</span></code></pre>
+<p>And voilà, you can now run <code>nx format</code> and it will run the <code>lint</code> target on all the projects in parallel.</p>
+<p>Note that the opposite is also possible, to run everything through <code>npm</code> but keep the caching and parallelization of NX
+by prefixing commands by <code>nx exec -- ...</code>.</p>
+<p>Full documentation is available <a href="https://nx.dev/recipes/other/root-level-scripts">here</a>.</p>
+<h2 id="defining-common-targets">Defining common targets</h2>
+<p>NX allows you to configure your monorepo packages in a <code>project.json</code> file (one per package).
+In my context, I wanted to define some common targets that would be used by all the packages,
+but I didn't want to copy/paste the same targets in all the <code>project.json</code> files.</p>
+<p>So How can I share those targets but still be able to configure them per package if needs be ?</p>
+<p>The answer is to use <code>targetDefaults</code> in the <code>nx.json</code> file (the global project configuration that is at the root of the monorepo).
+Here we could define our previous lint configuration like this:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>   &quot;</span><span style="color:#a3be8c;">extends</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">nx/presets/npm.json</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">$schema</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">./node_modules/nx/schemas/nx-schema.json</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">targetDefaults</span><span>&quot;: {
+</span><span>      &quot;</span><span style="color:#a3be8c;">lint</span><span>&quot;: {
+</span><span>         &quot;</span><span style="color:#a3be8c;">executor</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">@nx/linter:eslint</span><span>&quot;,
+</span><span>         &quot;</span><span style="color:#a3be8c;">options</span><span>&quot;: {
+</span><span>            &quot;</span><span style="color:#a3be8c;">lintFilePatterns</span><span>&quot;: [&quot;</span><span style="color:#a3be8c;">src/**/*.ts</span><span>&quot;]
+</span><span>         }
+</span><span>      }
+</span><span>   }
+</span><span>}
+</span></code></pre>
+<p>Then we would need to update the <code>project.json</code> of each of the packages that want to use this target like so if no override are required:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>   &quot;</span><span style="color:#a3be8c;">name</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">my-package</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">$schema</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">../../node_modules/nx/schemas/project-schema.json</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">targets</span><span>&quot;: {
+</span><span>      &quot;</span><span style="color:#a3be8c;">lint</span><span>&quot;: {}
+</span><span>   }
+</span><span>}
+</span></code></pre>
+<p>But if we need to override parts of the target configuration, we can:</p>
+<pre data-lang="json" style="background-color:#2b303b;color:#c0c5ce;" class="language-json "><code class="language-json" data-lang="json"><span>{
+</span><span>   &quot;</span><span style="color:#a3be8c;">name</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">my-package</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">$schema</span><span>&quot;: &quot;</span><span style="color:#a3be8c;">../../node_modules/nx/schemas/project-schema.json</span><span>&quot;,
+</span><span>   &quot;</span><span style="color:#a3be8c;">targets</span><span>&quot;: {
+</span><span>      &quot;</span><span style="color:#a3be8c;">lint</span><span>&quot;: {
+</span><span>         &quot;</span><span style="color:#a3be8c;">options</span><span>&quot;: {
+</span><span>            &quot;</span><span style="color:#a3be8c;">lintFilePatterns</span><span>&quot;: [&quot;</span><span style="color:#a3be8c;">src/**/*.ts</span><span>&quot;, &quot;</span><span style="color:#a3be8c;">src/**/*.js</span><span>&quot;]
+</span><span>         }
+</span><span>      }
+</span><span>   }
+</span><span>}
+</span></code></pre>
+<p>That's a good balance between monorepo global convention and specific configuration per package.</p>
+<p>Unfortunately this feature is not well documented <a href="https://nx.dev/reference/nx-json#target-defaults">here</a>, but I managed to find
+an issue and an associated PR that explains what I told you before: https://github.com/nrwl/nx/pull/12435.</p>
+<h1 id="conclusion">Conclusion</h1>
+<p>That's it for now, I am not sure if I update this article or create new ones / split this one in multiple articles in the future
+so keep an eye on my blog if you are interested in this kind of articles.</p>
+<p>Flo.</p>
+
+          </div>
+        </article>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+  
+  <section class="modal" id="search-modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Search</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="field mb-2">
+          <div class="control">
+            <input class="input" id="search" placeholder="Search this website." type="search" />
+          </div>
+        </div>
+        <div class="search-results">
+          <div class="search-results__items"></div>
+        </div>
+      </section>
+    </div>
+    <button aria-label="close" class="modal-close is-large"></button>
+  </section>
+  
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <nav class="level">
+              
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;posts&#x2F;installing-windows-arm-mac&#x2F;">
+              <span class="icon mr-2">
+                <i class="fas fa-arrow-circle-left"></i>
+              </span>
+              Using a Windows ARM VM on a ARM MAC
+            </a>
+          </div>
+           
+          <div class="level-item has-text-centered">
+            <a class="button is-black is-outlined" href="https:&#x2F;&#x2F;imflog.github.io&#x2F;posts&#x2F;starting-a-blog&#x2F;">
+              Building a blog<span class="icon ml-2">
+                <i class="fas fa-arrow-circle-right"></i>
+              </span>
+            </a>
+          </div>
+          
+        </nav>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <div id="disqus_thread"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  
+  <footer class="footer py-4">
+    <div class="content has-text-centered">
+      <p>
+        Built with
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-code"></i>
+          </span>
+          <span>code</span>
+        </span>
+        and
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-heart"></i>
+          </span>
+          <span>love</span>
+        </span>
+      </p>
+      <p>
+        Powered by
+        <span class="icon-text">
+          <span class="icon">
+            <i class="fas fa-power-off"></i>
+          </span>
+          <span>zola</span>
+        </span>
+      </p>
+    </div>
+  </footer>
+  
+
+  
+  
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@8.13.5/dist/mermaid.min.js" integrity="sha384-0yWn54pSGtfKCU+skfA69l25VsCw+MZt4LQov3xNRoS7YkAMrFokGgSBnAWSK4pv" crossorigin="anonymous"></script>
+  
+  
+  
+  <script src="https://imflog.github.io/elasticlunr.min.js"></script>
+  <script src="https://imflog.github.io/search_index.en.js"></script><script src="https://imflog.github.io/js/site.js"></script>
+
+  
+
+
+
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://imflog.github.io";
+    this.page.identifier = "/posts/nx-tips/";
+  };
+
+  (function () {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-imflog-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+
+
+
+  
+  
+</body>
+
+</html>

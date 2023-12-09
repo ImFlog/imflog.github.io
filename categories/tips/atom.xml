@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>My personal blog - Tips</title>
+    <link href="https://imflog.github.io/categories/tips/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-09T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/tips/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Managing tooling version with ASDF</title>
+        <published>2023-12-09T00:00:00+00:00</published>
+        <updated>2023-12-09T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/posts/asdf/" type="text/html"/>
+        <id>https://imflog.github.io/posts/asdf/</id>
+        
+        <content type="html">&lt;h1 id=&quot;the-local-tooling-problem&quot;&gt;The local tooling problem&lt;&#x2F;h1&gt;
+&lt;p&gt;I always had issues with managing the versions of the tools I use on my computer.
+Working on multiple projects, open and private sources implies that some tools are not all stuck on the same version.
+So I often end up needing to support multiple versions of the same tool on my computer.
+For example, I usually need to support multiple versions of languages : Go, Python, Java, NodeJS to name a few,
+but also tools like Terraform, Ansible, MySQL, Postgres ...&lt;&#x2F;p&gt;
+&lt;p&gt;So I started to use different tools to handler this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;moovweb&#x2F;gvm&quot;&gt;GVM&lt;&#x2F;a&gt; for Go&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv&quot;&gt;Pyenv&lt;&#x2F;a&gt; for Python&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sdkman.io&#x2F;&quot;&gt;SDKMAN&lt;&#x2F;a&gt; for Java&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nvm-sh&#x2F;nvm&quot;&gt;NVM&lt;&#x2F;a&gt; for NodeJS&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tfutils&#x2F;tfenv&quot;&gt;Tfenv&lt;&#x2F;a&gt; for Terraform&lt;&#x2F;li&gt;
+&lt;li&gt;...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And everything worked fine, but everytime I had to use a new language or tool (recently done some Rust for instance), 
+I had to find yet another tool. And I had to remember to update them from time to time.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;introducing-asdf&quot;&gt;Introducing ASDF&lt;&#x2F;h1&gt;
+&lt;p&gt;That when I found &lt;a href=&quot;https:&#x2F;&#x2F;asdf-vm.com&#x2F;&quot;&gt;ASDF&lt;&#x2F;a&gt;: &amp;quot;The Multiple Runtime Version Manager&amp;quot;.
+As the name implies it&#x27;s a tool to allow you to manage multiple versions of your runtimes with one tool.&lt;&#x2F;p&gt;
+&lt;p&gt;So I gave it a go, and I was not disappointed. After installing it using &lt;code&gt;brew install asdf&lt;&#x2F;code&gt;, 
+I was able to install the plugins that I needed, they are all listed in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;asdf-vm&#x2F;asdf-plugins&quot;&gt;specific GitHub repository&lt;&#x2F;a&gt;.
+You can run a single command to install a plugin and then you can install specific runtime version pretty easily:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asdf&lt;&#x2F;span&gt;&lt;span&gt; plugin add golang
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asdf&lt;&#x2F;span&gt;&lt;span&gt; golang install 1.21.1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And boom I have a new version of Go installed on my computer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;using-asdf-in-your-projects&quot;&gt;Using ASDF in your projects&lt;&#x2F;h2&gt;
+&lt;p&gt;After you have access to a new version of a runtime, you need to be able to use it in your projects.
+With tools like nvm, you could define a specific &lt;code&gt;.nvmrc&lt;&#x2F;code&gt; file in your project to specify the version of NodeJS to use.
+ASDF has a similar feature, you can create a &lt;code&gt;.tool-versions&lt;&#x2F;code&gt; file in your project and specify the version of the runtime to use:
+&lt;code&gt;asdf local golang 1.21.1&lt;&#x2F;code&gt; for instance will be responsible to populate the &lt;code&gt;.tool-versions&lt;&#x2F;code&gt; file with the correct version of Go.
+No more need to create multiple file named differently for each tool as everything is centralized in one file.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;easy-migration&quot;&gt;Easy migration&lt;&#x2F;h2&gt;
+&lt;p&gt;Adopting a new tool can be challenging in a team, but ASDF makes it easy.
+Indeed, most of the plugins support the non asdf version of the version definition.
+For instance for Go, you can use the &lt;code&gt;go.mod&lt;&#x2F;code&gt; file to specify the version of Go to use and ASDF will use it to install the correct version.
+&lt;code&gt;.nvmrc&lt;&#x2F;code&gt; is also supported for NodeJS for instance and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;That means that you can start using ASDF in your project without forcing your team to install it 🤩&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;ASDF is now one of the first thing I install on a new computer, it&#x27;s so easy to switch tool version that I can&#x27;t live without it anymore.
+I encourage you to give it a go, and if you have any question, feel free to ask them in the comments.&lt;&#x2F;p&gt;
+&lt;p&gt;Flo.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>NX tips</title>
+        <published>2023-05-29T00:00:00+00:00</published>
+        <updated>2023-05-29T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/posts/nx-tips/" type="text/html"/>
+        <id>https://imflog.github.io/posts/nx-tips/</id>
+        
+        <content type="html">&lt;h1 id=&quot;context&quot;&gt;Context&lt;&#x2F;h1&gt;
+&lt;p&gt;I recently started working on trying to improve the development experience on the frontend part of my company.
+The goal was to be able to:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;reduce the dependency management issues that we were having&lt;&#x2F;li&gt;
+&lt;li&gt;co-localize the code to reduce friction between teams&lt;&#x2F;li&gt;
+&lt;li&gt;reduce build time by using caches&lt;&#x2F;li&gt;
+&lt;li&gt;share a common set of practice (linting, testing ...) with ease.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Basically we wanted to use a &lt;a href=&quot;https:&#x2F;&#x2F;monorepo.tools&#x2F;&quot;&gt;monorepo&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;So I compared multiple tools:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;turbo.build&#x2F;&quot;&gt;Turborepo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nx.dev&#x2F;&quot;&gt;NX&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;lerna.js.org&#x2F;&quot;&gt;Lerna&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rushjs.io&#x2F;&quot;&gt;Rush&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I won&#x27;t go much into details about the differences between those tools, it&#x27;s not the purpose of this article, but we ended up choosing NX.
+In the next part I will list some tips about how to use NX, and will probably update this article with new tips as I discover them.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;nx-tricks&quot;&gt;NX tricks&lt;&#x2F;h1&gt;
+&lt;p&gt;NX as a pretty solid documentation, but sometimes I feel like it&#x27;s missing some examples, that&#x27;s why I am writing this article, for my future self.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;running-root-level-commands&quot;&gt;Running root level commands&lt;&#x2F;h2&gt;
+&lt;p&gt;To run root level command, you can modify your &lt;code&gt;package.json&lt;&#x2F;code&gt; to add a script like this one:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;scripts&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;format&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;nx run-many --target=lint --all --parallel&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;  }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This will allow you to run &lt;code&gt;npm run format&lt;&#x2F;code&gt; and it will run the &lt;code&gt;lint&lt;&#x2F;code&gt; target on all the projects in parallel.
+But what bothered me was that It forces developers to switch tool to run project level commands while the &lt;code&gt;nx&lt;&#x2F;code&gt; CLI would be used everywhere else.
+So I wanted to be able to run &lt;code&gt;nx format&lt;&#x2F;code&gt; instead of &lt;code&gt;npm run format&lt;&#x2F;code&gt;.
+To do so you can update your &lt;code&gt;package.json&lt;&#x2F;code&gt; with the following:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;nx&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {},
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;scripts&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;format&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;nx run-many --target=lint --all --parallel&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And voilà, you can now run &lt;code&gt;nx format&lt;&#x2F;code&gt; and it will run the &lt;code&gt;lint&lt;&#x2F;code&gt; target on all the projects in parallel.&lt;&#x2F;p&gt;
+&lt;p&gt;Note that the opposite is also possible, to run everything through &lt;code&gt;npm&lt;&#x2F;code&gt; but keep the caching and parallelization of NX
+by prefixing commands by &lt;code&gt;nx exec -- ...&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Full documentation is available &lt;a href=&quot;https:&#x2F;&#x2F;nx.dev&#x2F;recipes&#x2F;other&#x2F;root-level-scripts&quot;&gt;here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;defining-common-targets&quot;&gt;Defining common targets&lt;&#x2F;h2&gt;
+&lt;p&gt;NX allows you to configure your monorepo packages in a &lt;code&gt;project.json&lt;&#x2F;code&gt; file (one per package).
+In my context, I wanted to define some common targets that would be used by all the packages,
+but I didn&#x27;t want to copy&#x2F;paste the same targets in all the &lt;code&gt;project.json&lt;&#x2F;code&gt; files.&lt;&#x2F;p&gt;
+&lt;p&gt;So How can I share those targets but still be able to configure them per package if needs be ?&lt;&#x2F;p&gt;
+&lt;p&gt;The answer is to use &lt;code&gt;targetDefaults&lt;&#x2F;code&gt; in the &lt;code&gt;nx.json&lt;&#x2F;code&gt; file (the global project configuration that is at the root of the monorepo).
+Here we could define our previous lint configuration like this:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;extends&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;nx&#x2F;presets&#x2F;npm.json&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$schema&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;.&#x2F;node_modules&#x2F;nx&#x2F;schemas&#x2F;nx-schema.json&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;targetDefaults&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lint&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;         &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;executor&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;@nx&#x2F;linter:eslint&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;         &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;options&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lintFilePatterns&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;src&#x2F;**&#x2F;*.ts&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;]
+&lt;&#x2F;span&gt;&lt;span&gt;         }
+&lt;&#x2F;span&gt;&lt;span&gt;      }
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then we would need to update the &lt;code&gt;project.json&lt;&#x2F;code&gt; of each of the packages that want to use this target like so if no override are required:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;my-package&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$schema&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;..&#x2F;..&#x2F;node_modules&#x2F;nx&#x2F;schemas&#x2F;project-schema.json&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;targets&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lint&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {}
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;But if we need to override parts of the target configuration, we can:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;json&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-json &quot;&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;my-package&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;$schema&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;..&#x2F;..&#x2F;node_modules&#x2F;nx&#x2F;schemas&#x2F;project-schema.json&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;   &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;targets&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;      &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lint&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;         &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;options&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;            &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;lintFilePatterns&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;: [&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;src&#x2F;**&#x2F;*.ts&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;, &amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a3be8c;&quot;&gt;src&#x2F;**&#x2F;*.js&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;]
+&lt;&#x2F;span&gt;&lt;span&gt;         }
+&lt;&#x2F;span&gt;&lt;span&gt;      }
+&lt;&#x2F;span&gt;&lt;span&gt;   }
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;That&#x27;s a good balance between monorepo global convention and specific configuration per package.&lt;&#x2F;p&gt;
+&lt;p&gt;Unfortunately this feature is not well documented &lt;a href=&quot;https:&#x2F;&#x2F;nx.dev&#x2F;reference&#x2F;nx-json#target-defaults&quot;&gt;here&lt;&#x2F;a&gt;, but I managed to find
+an issue and an associated PR that explains what I told you before: https:&#x2F;&#x2F;github.com&#x2F;nrwl&#x2F;nx&#x2F;pull&#x2F;12435.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h1&gt;
+&lt;p&gt;That&#x27;s it for now, I am not sure if I update this article or create new ones &#x2F; split this one in multiple articles in the future
+so keep an eye on my blog if you are interested in this kind of articles.&lt;&#x2F;p&gt;
+&lt;p&gt;Flo.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Using a Windows ARM VM on a ARM MAC</title>
+        <published>2023-04-28T00:00:00+00:00</published>
+        <updated>2023-04-28T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/posts/installing-windows-arm-mac/" type="text/html"/>
+        <id>https://imflog.github.io/posts/installing-windows-arm-mac/</id>
+        
+        <content type="html">&lt;p&gt;While working on some obscure Windows and .NET things involving the requirement to run on Windows,
+I had to install a Windows VM.&lt;&#x2F;p&gt;
+&lt;p&gt;So I started looking around what can be done nowadays to use a VM in macOS.
+My first thought was to use Virtualbox and I rejoice when I found a &lt;a href=&quot;https:&#x2F;&#x2F;www.virtualbox.org&#x2F;wiki&#x2F;Downloads&quot;&gt;developer preview&lt;&#x2F;a&gt; 
+of it was available. After some poking around, I found out that even if it&#x27;s working on ARM, it is not capable of running ARM VMs.&lt;&#x2F;p&gt;
+&lt;p&gt;So I started looking elsewhere and I found &lt;a href=&quot;https:&#x2F;&#x2F;mac.getutm.app&#x2F;&quot;&gt;UTM&lt;&#x2F;a&gt;, a free and open source VM manager for macOS.&lt;&#x2F;p&gt;
+&lt;p&gt;In this article, I will explain how you can install Windows ARM on an ARM Mac using UTM.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;prerequisites&quot;&gt;Prerequisites&lt;&#x2F;h1&gt;
+&lt;p&gt;First of all, you will need to retrieve the Windows ARM image.
+Fortunately, Microsoft provides a &lt;a href=&quot;https:&#x2F;&#x2F;www.microsoft.com&#x2F;en-us&#x2F;software-download&#x2F;windowsinsiderpreviewARM64&quot;&gt;free evaluation version&lt;&#x2F;a&gt;.
+To be able to download it, you can simply register to the Windows Insider program (a Microsoft account is required).&lt;&#x2F;p&gt;
+&lt;p&gt;Then you need to install UTM, just follow the instructions on their &lt;a href=&quot;https:&#x2F;&#x2F;mac.getutm.app&#x2F;&quot;&gt;website&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;configuring-the-vm&quot;&gt;Configuring the VM&lt;&#x2F;h1&gt;
+&lt;p&gt;Unfortunately, just booting the VM on the provided HDVX file in UTM is not enough with Windows 11 (hence this blog).
+So here are the steps to install the VM correctly:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a new VM in UTM, you can select virtualization as we are using the same CPU architecture. Then you can use the HDVX file you downloaded from Microsoft: &lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;&lt;img src=&quot;&#x2F;posts&#x2F;windows_arm&#x2F;vm_configuration_utm.png&quot; alt=&quot;VM configuration in UTM&quot; width=&quot;400&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;After the boot, you will be prompted to select a network to finish the installation. But, the network will not be detected. 
+So you need to press MAJ + F10 to open a command prompt and run the following command &lt;code&gt;OOBE\BYPASSNRO&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;&lt;img src=&quot;&#x2F;posts&#x2F;windows_arm&#x2F;bypass_network.png&quot; alt=&quot;Terminal command to bypass network connection at login&quot; width=&quot;400&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;This will reboot the VM, and when you get back to the network page, you will now have a “I don’t have internet” button 😎&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;&lt;img src=&quot;&#x2F;posts&#x2F;windows_arm&#x2F;connection_skip.png&quot; alt=&quot;Skip connection screen on Windows installer&quot; width=&quot;400&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;Then you can finish the installation normally, and you will be greeted by the Windows 11 desktop. Where you won&#x27;t have internet and an horrible resolution 😭&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;But don&#x27;t worry, UTM got you covered, as you checked the &amp;quot;Install drivers and SPICE tools&amp;quot; box on the VM configuration,
+A Disk is mounted on the VM, you can run the &amp;quot;SPICE guest tools&amp;quot; installer that will reboot the VM.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;
+&lt;p&gt;The final step will be to modify the network configuration in UTM. You need to go to the VM configuration, then to the network tab.
+There you will need to change the network adapter type to &amp;quot;virtio-net-pci&amp;quot; and the network mode to &amp;quot;Bridged&amp;quot;.
+The interface that you need to use can probably stay the default value, but in doubt you can run &lt;code&gt;route get 10.10.10.10&lt;&#x2F;code&gt; and check what&#x27;s the used interface.&lt;&#x2F;p&gt;
+&lt;p style=&quot;text-align:center;&quot;&gt;&lt;img src=&quot;&#x2F;posts&#x2F;windows_arm&#x2F;network_configuration.png&quot; alt=&quot;Network configuration in UTM&quot; width=&quot;400&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h1 id=&quot;final-words&quot;&gt;Final words&lt;&#x2F;h1&gt;
+&lt;p&gt;And that&#x27;s it, you now have a working Windows ARM VM on your Mac ARM 🎉
+You can tweak a bit the resources you want to allocate to the VM to ensure correct performances, 
+but it&#x27;s working pretty well for me at the time of this writing.&lt;&#x2F;p&gt;
+&lt;p&gt;What&#x27;s cool also is that UTM is not limited to Windows ARM, you can use it to run any VMs, and also it&#x27;s free and open source.
+You can find the code and issue tracker on &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;utmapp&#x2F;UTM&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Hope It can help someone.&lt;&#x2F;p&gt;
+&lt;p&gt;Flo.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

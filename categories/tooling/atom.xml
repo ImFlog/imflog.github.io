@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>My personal blog - Tooling</title>
+    <link href="https://imflog.github.io/categories/tooling/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-09T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/tooling/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Managing tooling version with ASDF</title>
+        <published>2023-12-09T00:00:00+00:00</published>
+        <updated>2023-12-09T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/posts/asdf/" type="text/html"/>
+        <id>https://imflog.github.io/posts/asdf/</id>
+        
+        <content type="html">&lt;h1 id=&quot;the-local-tooling-problem&quot;&gt;The local tooling problem&lt;&#x2F;h1&gt;
+&lt;p&gt;I always had issues with managing the versions of the tools I use on my computer.
+Working on multiple projects, open and private sources implies that some tools are not all stuck on the same version.
+So I often end up needing to support multiple versions of the same tool on my computer.
+For example, I usually need to support multiple versions of languages : Go, Python, Java, NodeJS to name a few,
+but also tools like Terraform, Ansible, MySQL, Postgres ...&lt;&#x2F;p&gt;
+&lt;p&gt;So I started to use different tools to handler this:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;moovweb&#x2F;gvm&quot;&gt;GVM&lt;&#x2F;a&gt; for Go&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv&quot;&gt;Pyenv&lt;&#x2F;a&gt; for Python&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;sdkman.io&#x2F;&quot;&gt;SDKMAN&lt;&#x2F;a&gt; for Java&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;nvm-sh&#x2F;nvm&quot;&gt;NVM&lt;&#x2F;a&gt; for NodeJS&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tfutils&#x2F;tfenv&quot;&gt;Tfenv&lt;&#x2F;a&gt; for Terraform&lt;&#x2F;li&gt;
+&lt;li&gt;...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And everything worked fine, but everytime I had to use a new language or tool (recently done some Rust for instance), 
+I had to find yet another tool. And I had to remember to update them from time to time.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;introducing-asdf&quot;&gt;Introducing ASDF&lt;&#x2F;h1&gt;
+&lt;p&gt;That when I found &lt;a href=&quot;https:&#x2F;&#x2F;asdf-vm.com&#x2F;&quot;&gt;ASDF&lt;&#x2F;a&gt;: &amp;quot;The Multiple Runtime Version Manager&amp;quot;.
+As the name implies it&#x27;s a tool to allow you to manage multiple versions of your runtimes with one tool.&lt;&#x2F;p&gt;
+&lt;p&gt;So I gave it a go, and I was not disappointed. After installing it using &lt;code&gt;brew install asdf&lt;&#x2F;code&gt;, 
+I was able to install the plugins that I needed, they are all listed in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;asdf-vm&#x2F;asdf-plugins&quot;&gt;specific GitHub repository&lt;&#x2F;a&gt;.
+You can run a single command to install a plugin and then you can install specific runtime version pretty easily:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#2b303b;color:#c0c5ce;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asdf&lt;&#x2F;span&gt;&lt;span&gt; plugin add golang
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#bf616a;&quot;&gt;asdf&lt;&#x2F;span&gt;&lt;span&gt; golang install 1.21.1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And boom I have a new version of Go installed on my computer.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;using-asdf-in-your-projects&quot;&gt;Using ASDF in your projects&lt;&#x2F;h2&gt;
+&lt;p&gt;After you have access to a new version of a runtime, you need to be able to use it in your projects.
+With tools like nvm, you could define a specific &lt;code&gt;.nvmrc&lt;&#x2F;code&gt; file in your project to specify the version of NodeJS to use.
+ASDF has a similar feature, you can create a &lt;code&gt;.tool-versions&lt;&#x2F;code&gt; file in your project and specify the version of the runtime to use:
+&lt;code&gt;asdf local golang 1.21.1&lt;&#x2F;code&gt; for instance will be responsible to populate the &lt;code&gt;.tool-versions&lt;&#x2F;code&gt; file with the correct version of Go.
+No more need to create multiple file named differently for each tool as everything is centralized in one file.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;easy-migration&quot;&gt;Easy migration&lt;&#x2F;h2&gt;
+&lt;p&gt;Adopting a new tool can be challenging in a team, but ASDF makes it easy.
+Indeed, most of the plugins support the non asdf version of the version definition.
+For instance for Go, you can use the &lt;code&gt;go.mod&lt;&#x2F;code&gt; file to specify the version of Go to use and ASDF will use it to install the correct version.
+&lt;code&gt;.nvmrc&lt;&#x2F;code&gt; is also supported for NodeJS for instance and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;That means that you can start using ASDF in your project without forcing your team to install it 🤩&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;&#x2F;h2&gt;
+&lt;p&gt;ASDF is now one of the first thing I install on a new computer, it&#x27;s so easy to switch tool version that I can&#x27;t live without it anymore.
+I encourage you to give it a go, and if you have any question, feel free to ask them in the comments.&lt;&#x2F;p&gt;
+&lt;p&gt;Flo.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>
