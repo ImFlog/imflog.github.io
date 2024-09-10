@@ -1,6 +1,6 @@
 # The URL the site will be built for
 base_url = "https://imflog.github.io"
-title = "My personal blog"
+title = "ImFlog"
 
 ignored_content = ["README.md"]
 
