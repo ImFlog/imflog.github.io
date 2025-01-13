@@ -3,8 +3,11 @@ title = "Supercharging your Go presentation with Slidev"
 date = 2024-09-09
 
 [taxonomies]
-categories = ["tech"]
+categories = ["Tips"]
 tags = ["slides", "golang", "slidev"]
+
+[extra]
+comments = true
 +++
 
 # Supercharging your Go presentation with Slidev

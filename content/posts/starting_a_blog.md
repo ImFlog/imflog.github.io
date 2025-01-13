@@ -3,11 +3,8 @@ title="Building a blog"
 date=2023-08-04
 
 [taxonomies]
-categories = ["General"]
+categories = ["Misc"]
 tags = ["blog", "zola"]
-
-[extra]
-comments = true
 +++
 
 As tradition requires it, this post will do a tour of how this blog is built but also about the rationale behind the blog itself.
