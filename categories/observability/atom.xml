@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - Observability</title>
+    <link href="https://imflog.github.io/categories/observability/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2017-04-05T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/observability/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Distributed tracing</title>
+        <published>2017-04-05T00:00:00+00:00</published>
+        <updated>2017-04-05T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/distributed-tracing/" type="text/html"/>
+        <id>https://imflog.github.io/talks/distributed-tracing/</id>
+        
+        <content type="html">&lt;p&gt;In this talk I explain what distributed tracing is and how you can use it to monitor your distributed systems.
+The example is using Spring Cloud Sleuth and Zipkin.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;RExl_EKQmPo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;tracing-playground&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This is one of my first talk and at one of the biggest French conference. I was quite nervous, I had some language tics but it was a great experience.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - Kafka</title>
+    <link href="https://imflog.github.io/categories/kafka/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2018-04-18T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/kafka/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Music with Kafka</title>
+        <published>2018-04-18T00:00:00+00:00</published>
+        <updated>2018-04-18T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/music-kafka/" type="text/html"/>
+        <id>https://imflog.github.io/talks/music-kafka/</id>
+        
+        <content type="html">&lt;p&gt;In this long conference (3 hours), with my friends &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;vivien-maleze-1635b094&#x2F;&quot; target=&quot;_blank&quot;&gt;Vivien Maleze&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;paul-boutes-611831a9&#x2F;&quot; target=&quot;_blank&quot;&gt;Paul Boutes&lt;&#x2F;a&gt;, we explained all the concept useful when working with Kafka.&lt;&#x2F;p&gt;
+&lt;p&gt;To put this in practice we created a live application that plays and mix samples requested by the audience using Tweets.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;jrTznPb7Duo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;music-with-kafka&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Kafka Streams</title>
+        <published>2017-11-10T00:00:00+00:00</published>
+        <updated>2017-11-10T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/kafka-streams/" type="text/html"/>
+        <id>https://imflog.github.io/talks/kafka-streams/</id>
+        
+        <content type="html">&lt;p&gt;In this talk I explain what Kafka Streams is and how you can use it to build streaming applications.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;hhMOfXiQS60&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;kafka-playground&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

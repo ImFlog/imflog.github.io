@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - French</title>
+    <link href="https://imflog.github.io/categories/french/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-08T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/french/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Bruno</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2024-11-08T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/bruno/" type="text/html"/>
+        <id>https://imflog.github.io/talks/bruno/</id>
+        
+        <content type="html">&lt;p&gt;In this 15 min talk I briefly explain what Bruno is and how you can quickly get started using it.
+This is personally my goto tool when I need to call and test APIs and share those scenarios with my team.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;replay&quot;&gt;Replay&lt;&#x2F;h2&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;dEUN4f6YBHI&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;presentations&#x2F;tree&#x2F;main&#x2F;presentations&#x2F;bruno&#x2F;slides&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;presentations&#x2F;tree&#x2F;main&#x2F;presentations&#x2F;bruno&#x2F;src&quot;&gt;Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Building a game in Rust</title>
+        <published>2021-03-11T00:00:00+00:00</published>
+        <updated>2021-03-11T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/rust-bevy/" type="text/html"/>
+        <id>https://imflog.github.io/talks/rust-bevy/</id>
+        
+        <content type="html">&lt;p&gt;With my friend &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;thomastoledo&#x2F;&quot; target=&quot;_blank&quot;&gt;Thomas Toledo-Pierre&lt;&#x2F;a&gt;, we started a series of live coding sessions on Twitch to learn Rust.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;first-steps-with-rust&quot;&gt;First steps with Rust&lt;&#x2F;h2&gt;
+&lt;p&gt;In our first series we learned Rust by building a peer to peer chat in the browser.
+Unfortunately I don&#x27;t have the records of those lives but you can
+find the code in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;thomastoledo&#x2F;prust&quot;&gt;this GitHub repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;We went over the basics of Rust and used some tools&#x2F;libraries like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yew&lt;&#x2F;li&gt;
+&lt;li&gt;web-sys&lt;&#x2F;li&gt;
+&lt;li&gt;wasm-bindgen&lt;&#x2F;li&gt;
+&lt;li&gt;WebRTC&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;building-a-game&quot;&gt;Building a game&lt;&#x2F;h2&gt;
+&lt;p&gt;After this successful first project, we decided to tackle a new challenge: building a game.
+And this time we recorded everything.
+The project uses Bevy, a game engine for Rust and unfortunately we didn&#x27;t have the time to finish it during the live.&lt;&#x2F;p&gt;
+&lt;p&gt;You can take a look at the replays in the following playlist.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6IRJJ_FLaHo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The code is also available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;thomastoledo&#x2F;t-triste&quot;&gt;this GitHub repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Maybe one day I will take the time to finish it, but it was an interesting way to learn Rust.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Microservice security</title>
+        <published>2019-04-17T00:00:00+00:00</published>
+        <updated>2019-04-17T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/microservice-security/" type="text/html"/>
+        <id>https://imflog.github.io/talks/microservice-security/</id>
+        
+        <content type="html">&lt;p&gt;In this talk with &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;vivien-maleze-1635b094&quot; target=&quot;_blank&quot;&gt;Vivien Maleze&lt;&#x2F;a&gt; we detailed how to secure your microservices architecture.
+It explains the concepts of authentication, authorization, and how to put them in practice effectively.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;v41jO5feEOk&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;microservices-security&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Event driven architectures</title>
+        <published>2019-04-01T00:00:00+00:00</published>
+        <updated>2019-04-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/event-driven-architectures/" type="text/html"/>
+        <id>https://imflog.github.io/talks/event-driven-architectures/</id>
+        
+        <content type="html">&lt;p&gt;In this talk with &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;guillaume-lannebere-51a17183&#x2F;&quot; target=&quot;_blank&quot;&gt;Guillaume Lannebere&lt;&#x2F;a&gt;, we explain what event driven architectures are and how you can use them to build scalable and resilient systems.
+This talk explain how we built such architecture using AWS SNS and SQS and all the tooling around it to secure and monitor the system.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;M3JrFOokqbQ&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Music with Kafka</title>
+        <published>2018-04-18T00:00:00+00:00</published>
+        <updated>2018-04-18T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/music-kafka/" type="text/html"/>
+        <id>https://imflog.github.io/talks/music-kafka/</id>
+        
+        <content type="html">&lt;p&gt;In this long conference (3 hours), with my friends &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;vivien-maleze-1635b094&#x2F;&quot; target=&quot;_blank&quot;&gt;Vivien Maleze&lt;&#x2F;a&gt;
+and &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;paul-boutes-611831a9&#x2F;&quot; target=&quot;_blank&quot;&gt;Paul Boutes&lt;&#x2F;a&gt;, we explained all the concept useful when working with Kafka.&lt;&#x2F;p&gt;
+&lt;p&gt;To put this in practice we created a live application that plays and mix samples requested by the audience using Tweets.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;jrTznPb7Duo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;music-with-kafka&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Docker swarm</title>
+        <published>2017-11-10T00:00:00+00:00</published>
+        <updated>2017-11-10T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/docker-swarm/" type="text/html"/>
+        <id>https://imflog.github.io/talks/docker-swarm/</id>
+        
+        <content type="html">&lt;p&gt;In this talk with &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;jeremie-monsinjon&#x2F;&quot; target=&quot;_blank&quot;&gt;Jeremie Monsinjon&lt;&#x2F;a&gt; we explain what Docker swarm is and how you can use it to orchestrate your containers in a production ready mode.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;licg4PmK_pk&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;docker-discovery&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Nowadays, we don&#x27;t see anymore Docker Swarm in the wild. Kubernetes has taken over the container orchestration world. But it&#x27;s still interesting to see how it was working and how it was different from Kubernetes.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Kafka Streams</title>
+        <published>2017-11-10T00:00:00+00:00</published>
+        <updated>2017-11-10T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/kafka-streams/" type="text/html"/>
+        <id>https://imflog.github.io/talks/kafka-streams/</id>
+        
+        <content type="html">&lt;p&gt;In this talk I explain what Kafka Streams is and how you can use it to build streaming applications.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;hhMOfXiQS60&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;kafka-playground&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+    <entry xml:lang="en">
+        <title>Distributed tracing</title>
+        <published>2017-04-05T00:00:00+00:00</published>
+        <updated>2017-04-05T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/distributed-tracing/" type="text/html"/>
+        <id>https://imflog.github.io/talks/distributed-tracing/</id>
+        
+        <content type="html">&lt;p&gt;In this talk I explain what distributed tracing is and how you can use it to monitor your distributed systems.
+The example is using Spring Cloud Sleuth and Zipkin.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;RExl_EKQmPo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;tracing-playground&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;This is one of my first talk and at one of the biggest French conference. I was quite nervous, I had some language tics but it was a great experience.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

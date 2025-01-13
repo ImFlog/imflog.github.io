@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - Security</title>
+    <link href="https://imflog.github.io/categories/security/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-04-17T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/security/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Microservice security</title>
+        <published>2019-04-17T00:00:00+00:00</published>
+        <updated>2019-04-17T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/microservice-security/" type="text/html"/>
+        <id>https://imflog.github.io/talks/microservice-security/</id>
+        
+        <content type="html">&lt;p&gt;In this talk with &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;vivien-maleze-1635b094&quot; target=&quot;_blank&quot;&gt;Vivien Maleze&lt;&#x2F;a&gt; we detailed how to secure your microservices architecture.
+It explains the concepts of authentication, authorization, and how to put them in practice effectively.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;v41jO5feEOk&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;br &#x2F;&gt;
+&lt;p&gt;The code repository is available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;microservices-security&quot;&gt;GitHub&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

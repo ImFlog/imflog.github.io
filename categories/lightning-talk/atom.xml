@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - Lightning Talk</title>
+    <link href="https://imflog.github.io/categories/lightning-talk/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-11-08T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/lightning-talk/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Bruno</title>
+        <published>2024-11-08T00:00:00+00:00</published>
+        <updated>2024-11-08T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/bruno/" type="text/html"/>
+        <id>https://imflog.github.io/talks/bruno/</id>
+        
+        <content type="html">&lt;p&gt;In this 15 min talk I briefly explain what Bruno is and how you can quickly get started using it.
+This is personally my goto tool when I need to call and test APIs and share those scenarios with my team.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;replay&quot;&gt;Replay&lt;&#x2F;h2&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;dEUN4f6YBHI&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;&lt;h2 id=&quot;resources&quot;&gt;Resources&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;presentations&#x2F;tree&#x2F;main&#x2F;presentations&#x2F;bruno&#x2F;slides&quot;&gt;Slides&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;ImFlog&#x2F;presentations&#x2F;tree&#x2F;main&#x2F;presentations&#x2F;bruno&#x2F;src&quot;&gt;Code&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+        
+    </entry>
+</feed>

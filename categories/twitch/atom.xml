@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - Twitch</title>
+    <link href="https://imflog.github.io/categories/twitch/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2021-03-11T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/twitch/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Building a game in Rust</title>
+        <published>2021-03-11T00:00:00+00:00</published>
+        <updated>2021-03-11T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/rust-bevy/" type="text/html"/>
+        <id>https://imflog.github.io/talks/rust-bevy/</id>
+        
+        <content type="html">&lt;p&gt;With my friend &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;thomastoledo&#x2F;&quot; target=&quot;_blank&quot;&gt;Thomas Toledo-Pierre&lt;&#x2F;a&gt;, we started a series of live coding sessions on Twitch to learn Rust.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;first-steps-with-rust&quot;&gt;First steps with Rust&lt;&#x2F;h2&gt;
+&lt;p&gt;In our first series we learned Rust by building a peer to peer chat in the browser.
+Unfortunately I don&#x27;t have the records of those lives but you can
+find the code in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;thomastoledo&#x2F;prust&quot;&gt;this GitHub repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;We went over the basics of Rust and used some tools&#x2F;libraries like:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Yew&lt;&#x2F;li&gt;
+&lt;li&gt;web-sys&lt;&#x2F;li&gt;
+&lt;li&gt;wasm-bindgen&lt;&#x2F;li&gt;
+&lt;li&gt;WebRTC&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;building-a-game&quot;&gt;Building a game&lt;&#x2F;h2&gt;
+&lt;p&gt;After this successful first project, we decided to tackle a new challenge: building a game.
+And this time we recorded everything.
+The project uses Bevy, a game engine for Rust and unfortunately we didn&#x27;t have the time to finish it during the live.&lt;&#x2F;p&gt;
+&lt;p&gt;You can take a look at the replays in the following playlist.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6IRJJ_FLaHo&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;
+&lt;p&gt;The code is also available in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;thomastoledo&#x2F;t-triste&quot;&gt;this GitHub repository&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Maybe one day I will take the time to finish it, but it was an interesting way to learn Rust.&lt;&#x2F;p&gt;
+</content>
+        
+    </entry>
+</feed>

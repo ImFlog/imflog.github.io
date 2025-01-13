@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>ImFlog - AWS</title>
+    <link href="https://imflog.github.io/categories/aws/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://imflog.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2019-04-01T00:00:00+00:00</updated>
+    <id>https://imflog.github.io/categories/aws/atom.xml</id>
+    <entry xml:lang="en">
+        <title>Event driven architectures</title>
+        <published>2019-04-01T00:00:00+00:00</published>
+        <updated>2019-04-01T00:00:00+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://imflog.github.io/talks/event-driven-architectures/" type="text/html"/>
+        <id>https://imflog.github.io/talks/event-driven-architectures/</id>
+        
+        <content type="html">&lt;p&gt;In this talk with &lt;a href=&quot;https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;guillaume-lannebere-51a17183&#x2F;&quot; target=&quot;_blank&quot;&gt;Guillaume Lannebere&lt;&#x2F;a&gt;, we explain what event driven architectures are and how you can use them to build scalable and resilient systems.
+This talk explain how we built such architecture using AWS SNS and SQS and all the tooling around it to secure and monitor the system.&lt;&#x2F;p&gt;
+&lt;div class=&quot;youtube is-flex is-justify-content-center is-align-items-center&quot;&gt;
+    &lt;iframe
+        width=&quot;848&quot; height=&quot;510&quot;
+        src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;M3JrFOokqbQ&quot;
+        frameborder=&quot;0&quot; 
+        allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; 
+        allowfullscreen&gt;
+    &lt;&#x2F;iframe&gt;
+&lt;&#x2F;div&gt;</content>
+        
+    </entry>
+</feed>
